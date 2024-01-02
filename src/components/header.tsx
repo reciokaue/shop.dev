@@ -1,7 +1,9 @@
+import Image from 'next/image'
+
 export function Header() {
   return (
     <div className="mx-auto flex w-full max-w-[1180px] items-center justify-start gap-2 py-4">
-      <img src="/IgniteLogo.svg" alt="" />
+      <Image src="/IgniteLogo.svg" width={52} height={52} alt="" />
       <div className="flex">
         <h1 className="font-bold leading-tight">
           Shop
