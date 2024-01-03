@@ -23,7 +23,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={roboto.className}>
-        <div className="flex min-h-screen flex-col items-center justify-center">
+        <div className="flex min-h-screen flex-col items-center justify-start">
           <Header />
           {children}
         </div>

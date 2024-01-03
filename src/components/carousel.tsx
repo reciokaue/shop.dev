@@ -28,7 +28,7 @@ export function Carousel({ products }: CarouselProps) {
         products.map((product) => (
           <div key={product.id}>
             <Link
-              href={``}
+              href={`/product/${product.id}`}
               className="keen-slider__slide group relative flex h-full min-w-[656px]  items-center justify-center overflow-hidden rounded-lg bg-gradient-to-b from-[#1EA483] to-[#7465D4] p-1"
             >
               <Image
