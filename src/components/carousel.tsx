@@ -22,14 +22,15 @@ export function Carousel({ products }: CarouselProps) {
   return (
     <div
       ref={sliderRef}
-      className="keen-slide ml-auto mt-8 flex min-h-[656px] max-w-[calc(100vw-((100vw-1180px)/2))] overflow-hidden"
+      className="keen-slide ml-auto flex min-h-[656px] max-w-[calc(100vw-((100vw-1180px)/2))] overflow-hidden"
     >
       {products &&
         products.map((product) => (
           <div key={product.id}>
             <Link
+              prefetch={false}
               href={`/product/${product.id}`}
-              className="keen-slider__slide group relative flex h-full min-w-[656px]  items-center justify-center overflow-hidden rounded-lg bg-gradient-to-b from-[#1EA483] to-[#7465D4] p-1"
+              className="keen-slider__slide group relative flex h-full min-w-[576px]  items-center justify-center overflow-hidden rounded-lg bg-gradient-to-b from-[#1EA483] to-[#7465D4] p-1"
             >
               <Image
                 src={product.imageUrl}

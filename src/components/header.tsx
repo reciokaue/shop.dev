@@ -5,7 +5,7 @@ export function Header() {
   return (
     <div className="mx-auto flex w-full max-w-[1180px] items-center justify-start gap-2 py-8">
       <Link href="/" className="flex items-center justify-start gap-2">
-        <Image src="/IgniteLogo.svg" width={52} height={52} alt="" />
+        <Image src="/IgniteLogo.svg" width={52} height={52} alt="logo" />
         <div className="flex">
           <h1 className="font-bold leading-tight">
             Shop
