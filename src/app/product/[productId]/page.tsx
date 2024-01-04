@@ -1,6 +1,10 @@
+import axios from 'axios'
+import { Loader2 } from 'lucide-react'
 import Image from 'next/image'
+import { useState } from 'react'
 import Stripe from 'stripe'
 
+import { CheckoutButton } from '@/components/checkout-button'
 import { stripe } from '@/lib/stripe'
 import { priceFormatter } from '@/utils/formatter'
 
@@ -63,15 +67,12 @@ export default async function Product({ params }: Params) {
         <h1 className="text-[2rem] font-bold text-gray-300">{product.name}</h1>
         <span className="mt-4 block text-[2rem] text-green-300">
           {product.price}
-          {product.defaultPriceId}
         </span>
         <p className="mt-10 text-lg leading-relaxed text-gray-300">
           {product.description}
         </p>
 
-        <button className="mt-auto cursor-pointer rounded-lg bg-green-500 p-5 font-bold text-white hover:bg-green-300">
-          Comprar agora
-        </button>
+        <CheckoutButton priceId={product.defaultPriceId} />
       </aside>
     </main>
   )

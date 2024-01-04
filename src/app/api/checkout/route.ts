@@ -1,8 +1,12 @@
 import { stripe } from '@/lib/stripe'
 export const dynamic = 'force-dynamic' // defaults to auto
 
-export async function GET(req: Request) {
-  const priceId = 'price_1OTwTDHJ4AJ8tNezEIdbG7mS'
+export async function POST(req: Request) {
+  const { priceId } = (await req.json()) as any
+
+  if (!priceId) {
+    return Response.json({ message: 'Missing data', error: 400 })
+  }
 
   const successUrl = `${process.env.NEXT_URL}/success`
   const cancelUrl = `${process.env.NEXT_URL}/`
